@@ -2,13 +2,17 @@
 
 // This generates a random number from 1 to 20
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+//Variables for the score and highScore
 let score = 20;
 let highScore = 0;
 
+//Funtion fot the displayMessage
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
 
+//Main game logic
 document.querySelector(".check").addEventListener("click", function () {
   const guessNumber = document.querySelector(".guess").value;
 
@@ -36,6 +40,7 @@ document.querySelector(".check").addEventListener("click", function () {
   }
 });
 
+//Logic for the Again button
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
