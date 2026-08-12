@@ -8,3 +8,7 @@ let highScore = 0;
 const displayNumber = function (message) {
   document.querySelector(".message").textContent = message;
 };
+
+document.querySelector(".check").addEventListener("click", function () {
+  const guessNumber = document.querySelector(".guess").value;
+});
