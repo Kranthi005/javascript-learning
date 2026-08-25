@@ -1,10 +1,38 @@
-let imageSize = document.getElementById("image").style.width;
-document.getElementById("imageWidth").textContent = imageSize;
+let imageElement = document.getElementById("image");
+let imageWidthElement = document.getElementById("imageWidth");
+let warningMessageElement = document.getElementById("warningMessage");
 
-function decrement() {
-  document.getElementById("image").style.width = `{imageSize}px`;
+let imageMaxWidth = 300;
+let imageMinWidth = 100;
+let originalImageWidth = 200;
+let maxWidthWarningMessage = "Too big. Decrease the size of the Image.";
+let minWidthWarningMessage = "Can't Visible. Increase the size of the Image.";
+
+imageElement.style.width = originalImageWidth + "px";
+imageWidthElement.textContent = originalImageWidth + "px";
+
+function onIncrement() {
+  if (originalImageWidth >= imageMaxWidth) {
+    warningMessageElement.textContent = maxWidthWarningMessage;
+  } else {
+    originalImageWidth = originalImageWidth + 5;
+    let updatedImageWidth = originalImageWidth + "px";
+
+    warningMessageElement.textContent = "";
+    imageElement.style.width = updatedImageWidth;
+    imageWidthElement.textContent = updatedImageWidth;
+  }
 }
 
-function increment() {
-  document.getElementById("image").style.width = "1000px";
+function onDecrement() {
+  if (originalImageWidth <= imageMinWidth) {
+    warningMessageElement.textContent = minWidthWarningMessage;
+  } else {
+    originalImageWidth = originalImageWidth - 5;
+    let updatedImageWidth = originalImageWidth + "px";
+
+    warningMessageElement.textContent = "";
+    imageElement.style.width = updatedImageWidth;
+    imageWidthElement.textContent = updatedImageWidth;
+  }
 }
