@@ -29,5 +29,5 @@ function main() {
   let myArray = JSON.parse(input);
 
   console.log(myArray.pop());
-  console.log(myArray)
+  console.log(myArray);
 }
