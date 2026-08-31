@@ -2,11 +2,35 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" />
-    ß
   </head>
 
   <body>
-    <div class="container pt-4" id="movieReviewsContainer"></div>
+    <div class="container pt-4" id="movieReviewsContainer">
+      <div>
+        <h1>Movie Review</h1>
+      </div>
+
+      <div>
+        <form>
+          <label for="titleInput">MOVIE TITLE</label>
+
+          <input type="text" id="titleInput" placeholder="Enter movie title" />
+
+          <label for="reviewTextarea">Your Review:</label>
+
+          <textarea id="reviewTextarea" rows="4" cols="50"></textarea>
+        </form>
+      </div>
+
+      <div>
+        <button class="add-btn" id="addBtn" onclick="add()">Add</button>
+      </div>
+
+      <div id="reviewsContainer">
+        <h1 id="reviewsContainerHeading"></h1>
+        <p id="reviewsContainerParagraph"></p>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
